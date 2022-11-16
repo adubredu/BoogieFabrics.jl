@@ -11,14 +11,14 @@ end
 
 function lefthand_attractor_task_map(θ, θ̇, prob::Problem)
     sys = prob.sys
-    x₉ = sys.g
+    x₉ = sys.g[1]
     xh = left_hand_pose(θ, sys)
     return xh - x₉
 end
 
 function righthand_attractor_task_map(θ, θ̇, prob::Problem)
     sys = prob.sys
-    x₉ = sys.g
+    x₉ = sys.g[2]
     xh = right_hand_pose(θ, sys)
     return xh - x₉
 end
@@ -144,5 +144,5 @@ function picklerick_fabric_solve(θ, θ̇ , prob::Problem, sys::PickleRick)
     fᵣ = sum([J' * M * (ẍ - c) for (J, M, ẍ, c) in zip(Jₛ, Mₛ, ẍₛ, cₛ)])
     Mᵣ = convert(Matrix{Float64}, Mᵣ)
     ẍ = pinv(Mᵣ) * fᵣ   
-    return ẍ 
+    return fᵣ#ẍ 
 end

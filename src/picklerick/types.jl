@@ -26,7 +26,7 @@ mutable struct PickleRick
     l9::Float64 
     l10::Float64
     w::Float64
-    g::Vector{Float64}
+    g::Vector{Vector{Float64}}
     task_maps::Vector{Symbol}
     θᵣ::Vector{Float64}
     Δt::Float64
