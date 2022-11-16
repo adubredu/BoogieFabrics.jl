@@ -1,0 +1,13 @@
+name = "BoogieFabrics"
+uuid = "52228bf6-25b3-4c16-bcb9-83c93a5e4ec5"
+authors = ["Alphonsus Adu-Bredu"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
